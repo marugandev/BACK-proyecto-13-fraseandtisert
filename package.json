@@ -10,11 +10,11 @@
     "mainSeed": "node -r module-alias/register ./src/utils/seeds/mainSeed.js"
   },
   "_moduleAliases": {
-    "@api": "src/api",
-    "@config": "src/config",
-    "@data": "src/data",
-    "@middlewares": "src/middlewares",
-    "@utils": "src/utils"
+    "@api": "dist/api",
+    "@config": "dist/config",
+    "@data": "dist/data",
+    "@middlewares": "dist/middlewares",
+    "@utils": "dist/utils"
   },
   "keywords": [],
   "author": "",
