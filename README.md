@@ -85,7 +85,7 @@ Los archivos usersData.js y productsData.js se usan con npm run mainSeed.
 **Users**
 | Método | Ruta | Descripción |
 | ------ | ----------------- | --------------------------------------- |
-| GET | `/api/v1/users` | Obtiene todos los usuarios registrados (admin).|
+| GET | `/api/v1/users` | Obtiene todos los usuarios registrados. (admin)|
 | GET | `/api/v1/users/:id` | Obtiene un usuario por Id. |
 | PUT | `/api/v1/users/:id` | Actualiza los datos de un usuario. |
 | DELETE | `/api/v1/users/:id` | Elimina un usuario. |
@@ -95,7 +95,7 @@ Los archivos usersData.js y productsData.js se usan con npm run mainSeed.
 | ------ | ----------------- | --------------------------------------- |
 | GET | `/api/v1/products/:id` | Obtiene un producto por Id. |
 | GET | `/api/v1/products` | Obtiene todos los productos. |
-| POST | `/api/v1/products` | Crea un producto (admin)|
+| POST | `/api/v1/products` | Crea un producto. (admin)|
 | PUT | `/api/v1/products/:id` | Actualiza un producto. (admin) |
 | DELETE | `/api/v1/products/:id` | Elimina un producto. (admin)|
 
@@ -135,7 +135,7 @@ Middleware para subir imágenes a Cloudinary de forma segura.
 ## **Funciones clave**
 
 **deleteFile**
-Elimina imágenes de s Cloudinary para liberar espacio.
+Elimina imágenes de Cloudinary para liberar espacio.
 
 **JWT**
 Se utiliza para autenticar y proteger rutas privadas.
