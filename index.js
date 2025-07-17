@@ -22,9 +22,17 @@ connectCloudinary();
 
 app.use("/api/v1", mainRouter);
 
-app.use((req, res, next) => {
-  return res.status(404).json("Route not found");
+app.use((error, req, res, next) => {
+  console.error("Error:", error);
+  res.status(404).json({
+    status: "error",
+    message: "Route not found"
+  });
 });
+
+/* app.use((req, res, next) => {
+  return res.status(404).json("Route not found");
+}); */
 
 /* app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
