@@ -68,10 +68,10 @@ Los archivos usersData.js y productsData.js se usan con npm run mainSeed.
 
 **Usuarios predeterminados**:
 
-| userName | email                      | password | role  |
-| -------- | -------------------------- | -------- | ----- |
-| Admin    | `admin@fraseandtisert.com` | Admin123 | admin |
-| Nico     | `nico@fraseandtisert.com`  | Nico123  | user  |
+| userName | email                      | password  | role  |
+| -------- | -------------------------- | --------- | ----- |
+| Admin    | `admin@fraseandtisert.com` | Admin1234 | admin |
+| Nico     | `nico@fraseandtisert.com`  | Nico1234  | user  |
 
 ## **Endpoints**
 
@@ -83,12 +83,16 @@ Los archivos usersData.js y productsData.js se usan con npm run mainSeed.
 | POST | `/api/v1/auth/login` | Login de usuario. |
 
 **Users**
+| Método | Ruta | Descripción |
+| ------ | ----------------- | --------------------------------------- |
 | GET | `/api/v1/users` | Obtiene todos los usuarios registrados (admin).|
 | GET | `/api/v1/users/:id` | Obtiene un usuario por Id. |
 | PUT | `/api/v1/users/:id` | Actualiza los datos de un usuario. |
 | DELETE | `/api/v1/users/:id` | Elimina un usuario. |
 
 **Products**
+| Método | Ruta | Descripción |
+| ------ | ----------------- | --------------------------------------- |
 | GET | `/api/v1/products/:id` | Obtiene un producto por Id. |
 | GET | `/api/v1/products` | Obtiene todos los productos. |
 | POST | `/api/v1/products` | Crea un producto (admin)|
@@ -96,6 +100,8 @@ Los archivos usersData.js y productsData.js se usan con npm run mainSeed.
 | DELETE | `/api/v1/products/:id` | Elimina un producto. (admin)|
 
 **Cart**
+| Método | Ruta | Descripción |
+| ------ | ----------------- | --------------------------------------- |
 | GET | `/api/v1/cart` | Obtiene la cesta del usuario.|
 | POST | `/api/v1/cart` | crea y actualiza la cesta. |
 | DELETE | `/api/v1/cart` | Borra toda la cesta. |
@@ -103,11 +109,15 @@ Los archivos usersData.js y productsData.js se usan con npm run mainSeed.
 | POST | `/api/v1/cart/remove-item` | Elimina item seleccionado de la cesta. |
 
 **Orders**
+| Método | Ruta | Descripción |
+| ------ | ----------------- | --------------------------------------- |
 | GET | `/api/v1/orders` | Obtiene todos los pedidos. (admin)|
 | GET | `/api/v1/orders/my-orders` | Obtiene los pedidos del usuario. |
 | POST | `/api/v1/orders` | Añade el pedido y valida el stock de productos. |
 
 **Favorites**
+| Método | Ruta | Descripción |
+| ------ | ----------------- | --------------------------------------- |
 | GET | `/api/v1/favorites` | Obtiene los favoritos del usuario. |
 | POST | `/api/v1/favorites/:productId` | Añade producto a favoritos. |
 | DELETE | `/api/v1/favorites/:productId` | Elimina producto de favoritos. |
