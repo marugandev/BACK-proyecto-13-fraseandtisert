@@ -61,6 +61,12 @@ npm run dev
 npm run mainSeed
 ```
 
+**npm run local**: Inicia el servidor en local.
+
+```bash
+npm run local
+```
+
 ## **Carpeta de datos (/data)**
 
 Los datos de ejemplo para usuarios y productos están dentro de la carpeta data.

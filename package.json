@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch -r module-alias/register index.js",
+    "local": "node local.js",
     "mainSeed": "node -r module-alias/register ./src/utils/seeds/mainSeed.js"
   },
   "_moduleAliases": {
