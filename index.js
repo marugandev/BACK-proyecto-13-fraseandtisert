@@ -1,3 +1,4 @@
+require("module-alias/register");
 require("dotenv").config();
 require("@api/models");
 const express = require("express");
@@ -25,6 +26,8 @@ app.use((req, res, next) => {
   return res.status(404).json("Route not found");
 });
 
-app.listen(PORT, () => {
+/* app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });
+ */
+module.exports = app;
