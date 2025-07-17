@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "node --watch -r module-alias/register index.js",
     "mainSeed": "node -r module-alias/register ./src/utils/seeds/mainSeed.js"
   },
