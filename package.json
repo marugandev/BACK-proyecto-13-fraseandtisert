@@ -1,0 +1,36 @@
+{
+  "name": "back-proyecto-13-fraseandtisert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch -r module-alias/register index.js",
+    "mainSeed": "node -r module-alias/register ./src/utils/seeds/mainSeed.js"
+  },
+  "_moduleAliases": {
+    "@api": "src/api",
+    "@config": "src/config",
+    "@data": "src/data",
+    "@middlewares": "src/middlewares",
+    "@utils": "src/utils"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "morgan": "^1.10.0"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "module-alias": "^2.2.3",
+    "mongoose": "^8.16.3",
+    "multer": "^2.0.1",
+    "multer-storage-cloudinary": "^4.0.0"
+  }
+}
