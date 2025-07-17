@@ -1,6 +1,6 @@
-require("module-alias/register");
 require("dotenv").config();
 require("@api/models");
+
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
@@ -9,7 +9,7 @@ const { connectDB } = require("@config/db");
 const { connectCloudinary } = require("@config/cloudinary");
 const mainRouter = require("@api/routes/mainRouter");
 
-const PORT = process.env.PORT || 3000;
+/* const PORT = process.env.PORT || 3000; */
 const app = express();
 
 app.use(express.json({ limit: "10mb" }));
