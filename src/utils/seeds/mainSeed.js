@@ -1,9 +1,9 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 
-const { User } = require("../../api/models/userModel");
+const User = require("../../api/models/userModel");
 const usersData = require("../../data/usersData");
-const { Product } = require("../../api/models/productModel");
+const Product = require("../../api/models/productModel");
 const productsData = require("../../data/productsData");
 const getUsersDataHashed = require("../functions/getUsersDataHashed");
 
