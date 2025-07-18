@@ -1,5 +1,5 @@
-const Product = require("@api/models/productModel");
-const deleteFile = require("@utils/functions/deleteFile");
+const Product = require("../models/productModel");
+const deleteFile = require("../../utils/functions/deleteFile");
 
 const getProductById = async (req, res, next) => {
   try {

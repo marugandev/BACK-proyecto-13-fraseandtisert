@@ -1,5 +1,5 @@
-const User = require("@api/models/userModel");
-const { verifyJwt } = require("@utils/functions/jwt");
+const User = require("../api/models/userModel");
+const { verifyJwt } = require("../utils/functions/jwt");
 
 const isAuth = async (req, res, next) => {
   try {

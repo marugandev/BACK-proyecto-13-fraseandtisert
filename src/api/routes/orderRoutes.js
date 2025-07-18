@@ -4,8 +4,8 @@ const {
   getOrders,
   getUserOrders,
   addOrder
-} = require("@api/controllers/orderController");
-const { isAuth, isAdmin } = require("@middlewares/auth");
+} = require("../controllers/orderController");
+const { isAuth, isAdmin } = require("../../middlewares/auth");
 
 const authMid = [isAuth, isAdmin];
 

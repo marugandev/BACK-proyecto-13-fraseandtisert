@@ -1,4 +1,4 @@
-const Product = require("@api/models/productModel");
+const Product = require("../../api/models/productModel");
 
 const validateStock = async (cartItems) => {
   for (const item of cartItems) {

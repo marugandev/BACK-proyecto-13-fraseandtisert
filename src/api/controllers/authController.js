@@ -1,9 +1,9 @@
 const bcrypt = require("bcrypt");
-const User = require("@api/models/userModel");
+const User = require("../models/userModel");
 
-const hashPassword = require("@utils/functions/hashPassword");
-const { generateToken } = require("@utils/functions/jwt");
-const validatePatternPassword = require("@utils/functions/validatePatternPassword");
+const hashPassword = require("../../utils/functions/hashPassword");
+const { generateToken } = require("../../utils/functions/jwt");
+const validatePatternPassword = require("../../utils/functions/validatePatternPassword");
 
 const verifyToken = async (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];

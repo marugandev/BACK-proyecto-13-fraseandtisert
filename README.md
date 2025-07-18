@@ -19,7 +19,6 @@ Este repositorio contiene exclusivamente el backend, que se encarga de:
 - Subida y eliminación de imágenes con Cloudinary
 - API RESTful estructurada y mantenible
 - Logging con morgan para desarrollo
-- Imports limpios gracias a module-alias
 
 ## Tecnologías utilizadas
 
@@ -30,7 +29,6 @@ Este repositorio contiene exclusivamente el backend, que se encarga de:
 - **Cloudinary** para gestión de imágenes
 - **bcryptjs**, **express-validator**
 - **morgan** para logs HTTP en desarrollo
-- **module-alias** para mejorar la estructura de imports
 
 ## Estructura del proyecto
 

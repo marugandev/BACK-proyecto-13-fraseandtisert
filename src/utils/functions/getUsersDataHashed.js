@@ -1,5 +1,5 @@
-const validatePatternPassword = require("@utils/functions/validatePatternPassword");
-const hashPassword = require("@utils/functions/hashPassword");
+const validatePatternPassword = require("./validatePatternPassword");
+const hashPassword = require("./hashPassword");
 
 const getUsersDataHashed = async (users) => {
   const hashedUsers = [];

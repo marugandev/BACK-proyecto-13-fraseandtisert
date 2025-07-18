@@ -1,11 +1,11 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 
-const { User } = require("@api/models/userModel");
-const usersData = require("@data/usersData");
-const { Product } = require("@api/models/productModel");
-const productsData = require("@data/productsData");
-const getUsersDataHashed = require("@utils/functions/getUsersDataHashed");
+const { User } = require("../../api/models/userModel");
+const usersData = require("../../data/usersData");
+const { Product } = require("../../api/models/productModel");
+const productsData = require("../../data/productsData");
+const getUsersDataHashed = require("../functions/getUsersDataHashed");
 
 const seed = async (model, modelName, data) => {
   try {

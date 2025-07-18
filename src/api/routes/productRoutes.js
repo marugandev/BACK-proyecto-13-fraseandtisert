@@ -6,9 +6,9 @@ const {
   postProduct,
   putProduct,
   deleteProduct
-} = require("@api/controllers/productController");
-const { isAuth, isAdmin } = require("@middlewares/auth");
-const { uploadImg } = require("@middlewares/file");
+} = require("../controllers/productController");
+const { isAuth, isAdmin } = require("../../middlewares/auth");
+const { uploadImg } = require("../../middlewares/file");
 
 const authMid = [isAuth, isAdmin];
 

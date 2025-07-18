@@ -1,13 +1,13 @@
 const router = require("express").Router();
 
-const { isAuth } = require("@middlewares/auth");
+const { isAuth } = require("../../middlewares/auth");
 const {
   getCart,
   addItemToCart,
   updateCart,
   deleteCart,
   deleteItemFromCart
-} = require("@api/controllers/cartController");
+} = require("../controllers/cartController");
 
 router.get("/", isAuth, getCart);
 router.post("/", isAuth, updateCart);

@@ -1,9 +1,9 @@
-const Order = require("@api/models/orderModel");
-const Cart = require("@api/models/cartModel");
-const Product = require("@api/models/productModel");
+const Order = require("../models/orderModel");
+const Cart = require("../models/cartModell");
+const Product = require("../models/productModel");
 
-validateStock = require("@utils/functions/validateStock");
-const getTotalAmount = require("@utils/functions/getTotalAmount");
+validateStock = require("../../utils/functions/validateStock");
+const getTotalAmount = require("../../utils/functions/getTotalAmount");
 
 const getOrders = async (req, res, next) => {
   try {

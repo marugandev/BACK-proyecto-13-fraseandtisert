@@ -5,18 +5,18 @@ const {
   getUsers,
   putUser,
   deleteUser
-} = require("@api/controllers/userController");
-const { isAuth, isAdmin } = require("@middlewares/auth");
-const { uploadImg } = require("@middlewares/file");
-const { validateId } = require("@middlewares/validateId");
+} = require("../controllers/userController");
+const { isAuth, isAdmin } = require("../../middlewares/auth");
+const { uploadImg } = require("../../middlewares/file");
+const { validateId } = require("../../middlewares/validateId");
 const {
   validateUserPermission
-} = require("@middlewares/validateUserPermission");
+} = require("../../middlewares/validateUserPermission");
 
-const { validateUserFields } = require("@middlewares/validateUserFields");
+const { validateUserFields } = require("../../middlewares/validateUserFields");
 const {
   updateUserValidator
-} = require("@middlewares/validators/updateUserValidator");
+} = require("../../middlewares/validators/updateUserValidator");
 
 const authAndPermissionMid = [isAuth, validateId, validateUserPermission];
 const userUpdateValidationMid = [updateUserValidator, validateUserFields];

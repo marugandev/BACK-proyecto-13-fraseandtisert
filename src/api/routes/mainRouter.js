@@ -1,11 +1,11 @@
 const mainRouter = require("express").Router();
 
-const authRouter = require("@api/routes/authRoutes");
-const userRouter = require("@api/routes/userRoutes");
-const productRouter = require("@api/routes/productRoutes");
-const cartRouter = require("@api/routes/cartRoutes");
-const ordersRouter = require("@api/routes/orderRoutes");
-const favoritesRoutes = require("@api/routes/favoritesRoutes");
+const authRouter = require("../routes/authRoutes");
+const userRouter = require("../routes/userRoutes");
+const productRouter = require("../routes/productRoutes");
+const cartRouter = require("../routes/cartRoutes");
+const ordersRouter = require("../routes/orderRoutes");
+const favoritesRoutes = require("../routes/favoritesRoutes");
 
 mainRouter.use("/auth", authRouter);
 mainRouter.use("/users", userRouter);

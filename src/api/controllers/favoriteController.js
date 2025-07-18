@@ -1,4 +1,4 @@
-const User = require("@api/models/userModel");
+const User = require("../models/userModel");
 
 const getFavorites = async (req, res, next) => {
   try {

@@ -1,11 +1,11 @@
 const router = require("express").Router();
 
-const { isAuth } = require("@middlewares/auth");
+const { isAuth } = require("../../middlewares/auth");
 const {
   getFavorites,
   addFavorite,
   deleteFavorite
-} = require("@api/controllers/favoriteController");
+} = require("../controllers/favoriteController");
 
 router.get("/", isAuth, getFavorites);
 router.post("/:productId", isAuth, addFavorite);

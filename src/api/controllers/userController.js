@@ -1,6 +1,6 @@
-const User = require("@api/models/userModel");
-const deleteFile = require("@utils/functions/deleteFile");
-const hashPassword = require("@utils/functions/hashPassword");
+const User = require("../models/userModel");
+const deleteFile = require("../../utils/functions/deleteFile");
+const hashPassword = require("../../utils/functions/hashPassword");
 
 const getUserById = async (req, res, next) => {
   try {
