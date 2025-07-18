@@ -29,7 +29,11 @@ const getProductById = async (req, res, next) => {
 
 const getProducts = async (req, res, next) => {
   try {
-    const products = await Product.find();
+    const { category } = req.query;
+
+    const query = category ? { category } : {};
+
+    const products = await Product.find(query);
 
     return res.status(200).json({
       status: "success",
