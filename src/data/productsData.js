@@ -137,7 +137,7 @@ const productsData = [
     isFavorite: false,
     featured: true,
     featuredImage:
-      "https://res.cloudinary.com/cloudcloudinary4/image/upload/v1752506592/proyecto-13-fraseandtisert/assets/images/products/flat/filosofia/ladefilosofia_3_unmf7b.webp",
+      "https://res.cloudinary.com/cloudcloudinary4/image/upload/v1752506866/proyecto-13-fraseandtisert/assets/images/products/lifestyle/ladefilosofia_3_kor9pr.webp",
     featuredColor: "white",
     material: "100% algodón orgánico",
     tags: ["limited"],
@@ -145,9 +145,11 @@ const productsData = [
       {
         color: "white",
         images: {
-          flat: ["/images/products/flat/filosofia/ladefilosofia_3.webp"],
-          lifestyle: [
+          flat: [
             "https://res.cloudinary.com/cloudcloudinary4/image/upload/v1752506592/proyecto-13-fraseandtisert/assets/images/products/flat/filosofia/ladefilosofia_3_unmf7b.webp"
+          ],
+          lifestyle: [
+            "https://res.cloudinary.com/cloudcloudinary4/image/upload/v1752506866/proyecto-13-fraseandtisert/assets/images/products/lifestyle/ladefilosofia_3_kor9pr.webp"
           ]
         },
         availability: [
