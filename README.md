@@ -99,6 +99,7 @@ Los archivos usersData.js y productsData.js se usan con npm run mainSeed.
 | ------ | ----------------- | --------------------------------------- |
 | GET | `/api/v1/products/:id` | Obtiene un producto por Id. |
 | GET | `/api/v1/products` | Obtiene todos los productos. |
+| GET | `/api/v1/products?category=` | Obtiene todos los productos filtrados por categoría. |
 | POST | `/api/v1/products` | Crea un producto. (admin)|
 | PUT | `/api/v1/products/:id` | Actualiza un producto. (admin) |
 | DELETE | `/api/v1/products/:id` | Elimina un producto. (admin)|
