@@ -1,11 +1,11 @@
 const Product = require("../models/productModel");
 const deleteFile = require("../../utils/functions/deleteFile");
 
-const getProductById = async (req, res, next) => {
+const getProductBySlug = async (req, res, next) => {
   try {
-    const { id } = req.params;
+    const { slug } = req.params;
 
-    const product = await Product.findById(id);
+    const product = await Product.findOne({ slug });
     if (!product) {
       return res.status(404).json({
         status: "error",
@@ -196,7 +196,7 @@ const deleteProduct = async (req, res, next) => {
 };
 
 module.exports = {
-  getProductById,
+  getProductBySlug,
   getProducts,
   postProduct,
   putProduct,

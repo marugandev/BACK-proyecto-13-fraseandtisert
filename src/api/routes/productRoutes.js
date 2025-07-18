@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 const {
-  getProductById,
+  getProductBySlug,
   getProducts,
   postProduct,
   putProduct,
@@ -12,7 +12,7 @@ const { uploadImg } = require("../../middlewares/file");
 
 const authMid = [isAuth, isAdmin];
 
-router.get("/:id", getProductById);
+router.get("/:slug", getProductBySlug);
 router.get("/", getProducts);
 router.post("/", [...authMid, uploadImg("products").any()], postProduct);
 router.put("/:id", [...authMid, uploadImg("products").any()], putProduct);
