@@ -23,7 +23,7 @@ const verifyToken = async (req, res, next) => {
 
     return res.status(200).json({
       status: "success",
-      user
+      data: user
     });
   } catch (error) {
     console.error("error:", error);
@@ -82,15 +82,17 @@ const register = async (req, res, next) => {
     return res.status(201).json({
       status: "success",
       message: "Usuario registrado",
-      user: {
-        _id: newUserSaved._id,
-        userName: newUserSaved.userName,
-        email: newUserSaved.email,
-        role: newUserSaved.role,
-        profileImage: newUserSaved.profileImage
-      },
-      token,
-      expiresIn
+      data: {
+        user: {
+          _id: newUserSaved._id,
+          userName: newUserSaved.userName,
+          email: newUserSaved.email,
+          role: newUserSaved.role,
+          profileImage: newUserSaved.profileImage
+        },
+        token,
+        expiresIn
+      }
     });
   } catch (error) {
     console.error("error:", error);
@@ -133,15 +135,17 @@ const login = async (req, res, next) => {
     return res.status(200).json({
       status: "success",
       message: "Acceso realizado con éxito",
-      user: {
-        _id: user._id,
-        userName: user.userName,
-        email: user.email,
-        role: user.role,
-        profileImage: user.profileImage
-      },
-      token,
-      expiresIn
+      data: {
+        user: {
+          _id: user._id,
+          userName: user.userName,
+          email: user.email,
+          role: user.role,
+          profileImage: user.profileImage
+        },
+        token,
+        expiresIn
+      }
     });
   } catch (error) {
     console.error("error:", error);
