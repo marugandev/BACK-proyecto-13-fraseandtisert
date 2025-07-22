@@ -1,6 +1,33 @@
 const Product = require("../models/productModel");
 const deleteFile = require("../../utils/functions/deleteFile");
 
+const getProductById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const product = await Product.findById(id);
+
+    if (!product) {
+      return res.status(404).json({
+        status: "error",
+        message: "Producto no encontrado"
+      });
+    }
+    res.status(200).json({
+      status: "success",
+      message: "Producto obtenido",
+      data: product
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      status: "error",
+      message: "Error interno del servidor al obtener el producto por Id",
+      errorMessage: error.message
+    });
+  }
+};
+
 const getProductBySlug = async (req, res, next) => {
   try {
     const { slug } = req.params;
@@ -21,7 +48,7 @@ const getProductBySlug = async (req, res, next) => {
   } catch (error) {
     return res.status(500).json({
       status: "error",
-      message: "Error interno del servidor al obtener el producto",
+      message: "Error interno del servidor al obtener el producto por slug",
       errorMessage: error.message
     });
   }
@@ -196,6 +223,7 @@ const deleteProduct = async (req, res, next) => {
 };
 
 module.exports = {
+  getProductById,
   getProductBySlug,
   getProducts,
   postProduct,
