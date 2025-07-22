@@ -60,11 +60,12 @@ const putUser = async (req, res, next) => {
       });
     }
 
-    const { userName, email, password, favoriteProducts } = req.body;
+    const { userName, email, password, role, favoriteProducts } = req.body;
 
     const updatedData = {};
+
     if (userName && userName !== oldUser.userName) {
-      const userNameExists = await User.exists({ userName });
+      const userNameExists = await User.findOne({ userName });
       if (userNameExists && userNameExists._id.toString() !== id) {
         return res.status(400).json({
           status: "error",
@@ -75,11 +76,11 @@ const putUser = async (req, res, next) => {
     }
 
     if (email && email !== oldUser.email) {
-      const emailExists = await User.exists({ email });
+      const emailExists = await User.findOne({ email });
       if (emailExists && emailExists._id.toString() !== id) {
         return res.status(400).json({
           status: "error",
-          message: "El email ya esta registrado"
+          message: "El email ya está registrado"
         });
       }
       updatedData.email = email;
@@ -88,6 +89,16 @@ const putUser = async (req, res, next) => {
     if (req.file) {
       updatedData.profileImage = req.file.path;
       if (oldUser.profileImage) deleteFile(oldUser.profileImage);
+    }
+
+    if (role && role !== oldUser.role) {
+      if (!["user", "admin"].includes(role)) {
+        return res.status(400).json({
+          status: "error",
+          message: "El role es inválido"
+        });
+      }
+      updatedData.role = role;
     }
 
     if (favoriteProducts) {
