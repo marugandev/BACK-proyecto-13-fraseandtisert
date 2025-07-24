@@ -111,4 +111,74 @@ const addOrder = async (req, res, next) => {
   }
 };
 
-module.exports = { getOrders, getUserOrders, addOrder };
+const addOrderGuest = async (req, res, next) => {
+  try {
+    const { guestId, items } = req.body;
+
+    if (!guestId) {
+      return res.status(400).json({
+        status: "error",
+        message: "El guestId es requerido"
+      });
+    }
+
+    if (!items || items.length === 0) {
+      return res.status(400).json({
+        status: "error",
+        message: "la cesta esta vacía"
+      });
+    }
+
+    const checkStock = await validateStock(items);
+    if (checkStock.error) {
+      return res.status(checkStock.statusCode).json({
+        status: checkStock.status,
+        message: checkStock.message
+      });
+    }
+
+    const totalAmount = getTotalAmount(items);
+
+    const order = await Order.create({
+      guestId,
+      items,
+      totalAmount,
+      shippingAddress: undefined,
+      status: "pending",
+      paidAt: undefined
+    });
+
+    for (const item of items) {
+      await Product.updateOne(
+        {
+          _id: item.productId,
+          "variants.color": item.color,
+          "variants.availability.size": item.size
+        },
+        {
+          $inc: {
+            "variants.$[v].availability.$[a].quantity": -item.quantity
+          }
+        },
+        {
+          arrayFilters: [{ "v.color": item.color }, { "a.size": item.size }]
+        }
+      );
+    }
+
+    return res.status(201).json({
+      status: "success",
+      message: "Pedido realizado",
+      data: order
+    });
+  } catch (error) {
+    console.error("error:", error);
+    return res.status(500).json({
+      status: "error",
+      message: "Error al procesar el pedido",
+      errorMessage: error.message
+    });
+  }
+};
+
+module.exports = { getOrders, getUserOrders, addOrder, addOrderGuest };
