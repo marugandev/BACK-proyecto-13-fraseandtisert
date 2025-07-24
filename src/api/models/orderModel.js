@@ -44,6 +44,9 @@ const orderSchema = new mongoose.Schema(
       type: mongoose.Types.ObjectId,
       ref: "user"
     },
+    guestId: {
+      type: String
+    },
     items: {
       type: [orderItemSchema],
       default: []
