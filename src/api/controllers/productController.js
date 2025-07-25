@@ -15,7 +15,7 @@ const getProductById = async (req, res, next) => {
     }
     res.status(200).json({
       status: "success",
-      message: "Producto obtenido",
+      message: "Producto obtenido por id",
       data: product
     });
   } catch (error) {
@@ -23,6 +23,33 @@ const getProductById = async (req, res, next) => {
     res.status(500).json({
       status: "error",
       message: "Error interno del servidor al obtener el producto por Id",
+      errorMessage: error.message
+    });
+  }
+};
+
+const getProductsByIds = async (req, res, next) => {
+  try {
+    const { ids } = req.body;
+
+    if (!Array.isArray(ids) || ids.length === 0) {
+      return res.status(400).json({
+        status: "error",
+        message: "Se requiere un array de Ids"
+      });
+    }
+
+    const products = await Product.find({ _id: { $in: ids } });
+
+    return res.status(200).json({
+      status: "success",
+      message: "Productos obtenidos por Ids",
+      data: products
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: "error",
+      message: "Error interno del servidor al obtener productos por Ids",
       errorMessage: error.message
     });
   }
@@ -224,6 +251,7 @@ const deleteProduct = async (req, res, next) => {
 
 module.exports = {
   getProductById,
+  getProductsByIds,
   getProductBySlug,
   getProducts,
   postProduct,
