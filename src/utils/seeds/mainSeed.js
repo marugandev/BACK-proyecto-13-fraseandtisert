@@ -6,13 +6,19 @@ const usersData = require("../../data/usersData");
 const Product = require("../../api/models/productModel");
 const productsData = require("../../data/productsData");
 const getUsersDataHashed = require("../functions/getUsersDataHashed");
+const Cart = require("../../api/models/cartModel");
+const Order = require("../../api/models/orderModel");
 
 const seed = async (model, modelName, data) => {
   try {
     await model.deleteMany();
     console.log(`${modelName} deleted from the DB`);
 
-    await model.insertMany(data);
+    if (Array.isArray(data) && data.length > 0) {
+      await model.insertMany(data);
+      console.log(`${modelName} added to the DB`);
+    }
+
     console.log(`${modelName} added to the DB`);
   } catch (error) {
     console.log(`Error seeding ${modelName}:`, error);
@@ -28,6 +34,8 @@ const runSeed = async () => {
 
     await seed(User, "Users", users);
     await seed(Product, "Products", productsData);
+    await seed(Cart, "Carts");
+    await seed(Order, "Orders");
 
     await mongoose.disconnect();
     console.log("Disconnected from DB");
