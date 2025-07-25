@@ -15,7 +15,7 @@ const { uploadImg } = require("../../middlewares/file");
 const authMid = [isAuth, isAdmin];
 
 router.get("/by-id/:id", getProductById);
-router.get("/by-ids", getProductsByIds);
+router.post("/by-ids", getProductsByIds);
 router.get("/:slug", getProductBySlug);
 router.get("/", getProducts);
 router.post("/", [...authMid, uploadImg("products").any()], postProduct);
