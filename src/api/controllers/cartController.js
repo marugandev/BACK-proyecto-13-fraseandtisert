@@ -35,7 +35,7 @@ const addItemToCart = async (req, res, next) => {
 
     if (!cart) {
       const newCart = await Cart.create({
-        user: userId,
+        user: req.user.id,
         items: [
           {
             productId,
@@ -55,6 +55,7 @@ const addItemToCart = async (req, res, next) => {
 
     const existingItem = cart.items.find(
       (item) =>
+        item.productId &&
         item.productId.toString() === productId &&
         item.color === color &&
         item.size === size
