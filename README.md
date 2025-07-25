@@ -155,4 +155,4 @@ Es una demo: el modelo de Order aún no implementa lógica real de pagos.
 
 ## **Repositorio Frontend**
 
-Este backend tiene un frontend completo disponible en otro repositorio [FRONT-proyecto-13-fraseandtisert]("https://github.com/marugandev/FRONT-proyecto-13-fraseandtisert.git").
+Este backend tiene un frontend completo disponible en otro repositorio [FRONT-proyecto-13-fraseandtisert](https://github.com/marugandev/FRONT-proyecto-13-fraseandtisert.git).
